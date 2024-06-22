@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Menu</title>
+    <link rel="stylesheet" href="./src/css/ouput.css">
+    <style>
+        /* Custom styles here if needed */
+        /* Hamburger icon animation */
+        .hamburger-icon span {
+            transition: transform 0.3s ease;
+        }
+        .hamburger-icon.open span:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 4px);
+        }
+        .hamburger-icon.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-icon.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(4px, -4px);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div id="menu" class="fixed inset-y-0 left-0 z-50 w-3/4 bg-white shadow-lg transform -translate-x-full transition duration-300 ease-in-out">
+        <!-- Menu content here -->
+        <div class="p-4">
+            <h1 class="text-xl font-bold">Menu</h1>
+            <ul class="mt-4">
+                <li><a href="#" class="block py-2 text-gray-800 hover:bg-gray-200">Home</a></li>
+                <li><a href="#" class="block py-2 text-gray-800 hover:bg-gray-200">About</a></li>
+                <li><a href="#" class="block py-2 text-gray-800 hover:bg-gray-200">Services</a></li>
+                <li><a href="#" class="block py-2 text-gray-800 hover:bg-gray-200">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="flex justify-end p-4">
+        <button id="hamburgerBtn" class="hamburger-icon block lg:hidden focus:outline-none">
+            <span class="block w-6 h-1 bg-gray-900 mb-1 rounded"></span>
+            <span class="block w-6 h-1 bg-gray-900 mb-1 rounded"></span>
+            <span class="block w-6 h-1 bg-gray-900 mb-1 rounded"></span>
+        </button>
+    </div>
+
+    <script>
+        const menu = document.getElementById('menu');
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+
+        hamburgerBtn.addEventListener('click', function() {
+            menu.classList.toggle('-translate-x-full');
+        });
+    </script>
+</body>
+</html>
